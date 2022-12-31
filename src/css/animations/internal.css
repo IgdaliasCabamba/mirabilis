@@ -1,4 +1,4 @@
-@keyframes checkmarkRotation {
+@keyframes mirabilisCheckmarkRotation {
     from {
         opacity: 0;
         transform: rotate(-90deg);

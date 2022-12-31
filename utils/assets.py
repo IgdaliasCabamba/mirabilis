@@ -23,7 +23,7 @@ def compile_js(assets) -> list:
         'js/*/**.js',
         'js/**/**.js',
         filters='jsmin',
-        output='../dist/js/mirabilis.min.js'
+        output='../dist/js/welwitschia.min.js'
     )
 
     assets.register('mirabilis_scripts', mirabilis_script_bundle)

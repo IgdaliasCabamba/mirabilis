@@ -1,0 +1,37 @@
+[MCheckableCard] [w-binder] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+[MCheckableCard] {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+[MCheckableCard]:hover {
+    cursor: pointer;
+}
+
+[MCheckableCard][checked=true] {
+    -webkit-transition: border .4s;
+    -o-transition: border .4s;
+    transition: border .4s;
+}
+
+/* checkmark hidden when not checked */
+[MCheckableCard][checked=false] [checkmark] {
+    position: static;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/*checkmark show when checked*/
+[MCheckableCard][checked=true] [checkmark] {
+    opacity: 1;
+    pointer-events: all;
+}
