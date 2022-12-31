@@ -142,7 +142,9 @@ function observe_new_checkable_in_dom() {
     //observer.disconnect()
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.updateCheckableCards = () => {
     update_doom()
     observe_new_checkable_in_dom()
-})
+}
+
+updateCheckableCards()

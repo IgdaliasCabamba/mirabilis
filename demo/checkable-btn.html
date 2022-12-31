@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Radio Button</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../src/css/checkable-button.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <style>
+        .example-btn .layout label {
+            border: 2px solid #6c63ff;
+            color: #fff;
+            border-radius: 25px;
+        }
+
+        .example-btn .layout label::before {
+            font-family:'Bootstrap-icons';
+            font-weight: 900;
+            font-size: 15px;
+            content: "\F5D5";
+            padding: 2px 6px 2px 2px;
+        }
+
+        .example-btn .layout [MInput]:checked+label::before {
+            content: "\F5D6 ";
+            transform: rotate(-360deg);
+            transition: transform .3s ease-in-out;
+        }
+
+        .example-btn .layout [MInput]:checked+label {
+            border: 2px solid #674736;
+            color: #54B435;
+            background-color: #674736;
+            transition: all .2s;
+        }
+        
+    </style>
+
+</head>
+
+<body style="background-color: #222; color: #ddd; text-align: center; padding-top: 30vh;">
+    
+    <div class="example-btn" MCheckableWidget>
+        <span class="layout" MLayout>
+            <input type="radio" id="radioOne" name="radioExample" value="Example1" MInput>
+            <label class="p-2" for="radioOne" MLabel>Radio Example One</label>
+        </span>
+    </div>
+
+    <div class="example-btn" MCheckableWidget>
+        <span class="layout" MLayout>
+            <input type="radio" id="radioTwo" name="radioExample" value="Example2" MInput>
+            <label class="p-2" for="radioTwo" MLabel>Radio Example Two</label>
+        </span>
+    </div>
+
+    
+    <div class="example-btn" MCheckableWidget>
+        <span class="layout" MLayout>
+            <input type="checkbox" id="checkboxOne" value="Example01" MInput>
+            <label class="p-2" for="checkboxOne" MLabel>CheckBox Example One</label>
+        </span>
+    </div>
+
+    <div class="example-btn" MCheckableWidget>
+        <span class="layout" MLayout>
+            <input type="checkbox" id="checkboxTwo" value="Example02" MInput>
+            <label class="p-2" for="checkboxTwo" MLabel>CheckBox Example Two</label>
+        </span>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+[MCheckableWidget]>[MLayout] {
+    display: inline;
+}
+
+[MCheckableWidget]>[MLayout]>[MLabel] {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 3px 0px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+[MCheckableWidget]>[MLayout]>[MLabel]::before{
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+[MCheckableWidget]>[MLayout]>[MInput]{
+    display: absolute;
+}
+
+[MCheckableWidget]>[MLayout]>[MInput]{
+    position: absolute;
+    opacity: 0;
+}
