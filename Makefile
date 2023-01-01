@@ -1,2 +1,2 @@
 release:
-	@source pyenv/bin/activate; python . dist
+	@source venv/bin/activate; python . dist
