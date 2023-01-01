@@ -7,7 +7,7 @@ def compile_css(assets) -> list:
         'css/**.css',
         'css/*/**.css',
         'css/**/**.css',
-        filters='cssmin',
+        filters='rcssmin',
         output='../dist/css/mirabilis.min.css'
     )
 
@@ -22,7 +22,7 @@ def compile_js(assets) -> list:
         'js/**.js',
         'js/*/**.js',
         'js/**/**.js',
-        filters='jsmin',
+        filters='rjsmin',
         output='../dist/js/welwitschia.min.js'
     )
 
