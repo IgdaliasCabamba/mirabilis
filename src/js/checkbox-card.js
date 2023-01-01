@@ -1,49 +1,49 @@
 function checkBoxCard(element) {
-    element.inputElement.checked = true
-    element.mainElement.setAttribute("checked", true)
-}
+    element.inputElement.checked = true;
+    element.mainElement.setAttribute("checked", true);
+};
 function uncheckBoxCard(element) {
-    element.inputElement.checked = false
-    element.mainElement.setAttribute("checked", false)
-}
+    element.inputElement.checked = false;
+    element.mainElement.setAttribute("checked", false);
+};
 
 function handleCheckCardState(element) {
     if (element.inputElement.checked) {
-        uncheckBoxCard(element)
+        uncheckBoxCard(element);
     }
     else {
-        checkBoxCard(element)
-    }
-}
+        checkBoxCard(element);
+    };
+};
 
 function listenCheckEvents(cards) {
     cards.forEach(function listening(card) {
-        const element = card
-        card.inputElement.addEventListener('change', () => { handleCheckCardState(element) })
-        card.mainElement.addEventListener('click', () => { handleCheckCardState(element) })
-    })
-}
+        const element = card;
+        card.inputElement.addEventListener('change', () => { handleCheckCardState(element); });
+        card.mainElement.addEventListener('click', () => { handleCheckCardState(element); });
+    });
+};
 
-function initCheckableCard(card) {card.inputElement.checked ? checkBoxCard(card) : uncheckBoxCard(card)}
+function initCheckableCard(card) {card.inputElement.checked ? checkBoxCard(card) : uncheckBoxCard(card)};
 
 function bindCheckableCards() {
     let cards = document.querySelectorAll('[MCheckableCard][w-type="checkbox"]');
-    let checkableCards = []
+    let checkableCards = [];
 
     Array.from(cards).forEach(function (element) {
 
         if (element.querySelector("[w-binder]") === null) {
-            return
-        }
+            return;
+        };
         const card = {
             mainElement: element,
             inputElement: element.querySelector("[w-binder]"),
-        }
+        };
 
-        checkableCards.push(card)
-        initCheckableCard(card)
-    })
-    listenCheckEvents(checkableCards)
-}
+        checkableCards.push(card);
+        initCheckableCard(card);
+    });
+    listenCheckEvents(checkableCards);
+};
 
-bindCheckableCards()
+bindCheckableCards();
