@@ -1,38 +1,46 @@
-function checkBoxCard(element) {
+function checkRadioCard(element) {
     element.inputElement.checked = true
     element.mainElement.setAttribute("checked", true)
 }
-function uncheckBoxCard(element) {
+function uncheckRadioCard(element) {
     element.inputElement.checked = false
     element.mainElement.setAttribute("checked", false)
 }
 
-function handleCardState(element) {
-    if (element.inputElement.checked) {
-        uncheckBoxCard(element)
-    }
-    else {
-        checkBoxCard(element)
-    }
-}
+function uncheckRadioGroup(element) {
+    let radio_cards = document.querySelectorAll('[MCheckableCard][w-type="radio"]');
+    let radioName = element.mainElement.querySelector("[w-binder]").getAttribute("name")
 
-function listenEvents(cards) {
-    cards.forEach(function listening(card) {
-        const element = card
-        card.inputElement.addEventListener('change', () => { handleCardState(element) })
-        card.mainElement.addEventListener('click', () => { handleCardState(element) })
+    Array.from(radio_cards).forEach(function (radio_card) {
+        if (radio_card.querySelector(`input[name="${radioName}"]`) == null) {
+            return
+        }
+        radio_card.setAttribute("checked", false)
     })
 }
 
-function initCheckableCard(card) {card.inputElement.checked ? checkBoxCard(card) : uncheckBoxCard(card)}
+function handleRadioCardState(element) {
+    uncheckRadioGroup(element)
+    checkRadioCard(element)
+}
 
-function bindCheckableCards() {
-    let cards = document.querySelectorAll('[MCheckableCard]');
+function listenRadioEvents(cards) {
+    cards.forEach(function listening(card) {
+        const element = card
+        card.inputElement.addEventListener('change', () => { handleRadioCardState(element) })
+        card.mainElement.addEventListener('click', () => { handleRadioCardState(element) })
+    })
+}
+
+function initRadioCard(card) { card.inputElement.checked ? checkRadioCard(card) : uncheckRadioCard(card) }
+
+function bindRadioCards() {
+    let cards = document.querySelectorAll('[MCheckableCard][w-type="radio"]');
     let checkableCards = []
 
     Array.from(cards).forEach(function (element) {
 
-        if (element.querySelector("[w-binder]") === null) {
+        if (element.querySelector("[w-binder]") === null || element.querySelector("[w-binder]") === null) {
             return
         }
         const card = {
@@ -41,9 +49,9 @@ function bindCheckableCards() {
         }
 
         checkableCards.push(card)
-        initCheckableCard(card)
+        initRadioCard(card)
     })
-    listenEvents(checkableCards)
+    listenRadioEvents(checkableCards)
 }
 
-bindCheckableCards()
+bindRadioCards()

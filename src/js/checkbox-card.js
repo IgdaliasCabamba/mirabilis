@@ -7,7 +7,7 @@ function uncheckBoxCard(element) {
     element.mainElement.setAttribute("checked", false)
 }
 
-function handleCardState(element) {
+function handleCheckCardState(element) {
     if (element.inputElement.checked) {
         uncheckBoxCard(element)
     }
@@ -16,18 +16,18 @@ function handleCardState(element) {
     }
 }
 
-function listenEvents(cards) {
+function listenCheckEvents(cards) {
     cards.forEach(function listening(card) {
         const element = card
-        card.inputElement.addEventListener('change', () => { handleCardState(element) })
-        card.mainElement.addEventListener('click', () => { handleCardState(element) })
+        card.inputElement.addEventListener('change', () => { handleCheckCardState(element) })
+        card.mainElement.addEventListener('click', () => { handleCheckCardState(element) })
     })
 }
 
 function initCheckableCard(card) {card.inputElement.checked ? checkBoxCard(card) : uncheckBoxCard(card)}
 
 function bindCheckableCards() {
-    let cards = document.querySelectorAll('[MCheckableCard]');
+    let cards = document.querySelectorAll('[MCheckableCard][w-type="checkbox"]');
     let checkableCards = []
 
     Array.from(cards).forEach(function (element) {
@@ -43,7 +43,7 @@ function bindCheckableCards() {
         checkableCards.push(card)
         initCheckableCard(card)
     })
-    listenEvents(checkableCards)
+    listenCheckEvents(checkableCards)
 }
 
 bindCheckableCards()
