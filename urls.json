@@ -1,0 +1,10 @@
+{
+    "0.2.0": {
+        "css": "https://cdn.jsdelivr.net/gh/IgdaliasCabamba/mirabilis/dist/0.2.0/css/mirabilis.min.css",
+        "js": "https://cdn.jsdelivr.net/gh/IgdaliasCabamba/mirabilis/dist/0.2.0/js/welwitschia.min.js"
+    },
+    "0.2.1": {
+        "css": "https://cdn.jsdelivr.net/gh/IgdaliasCabamba/mirabilis/dist/0.2.1/css/mirabilis.min.css",
+        "js": "https://cdn.jsdelivr.net/gh/IgdaliasCabamba/mirabilis/dist/0.2.1/js/welwitschia.min.js"
+    }
+}
