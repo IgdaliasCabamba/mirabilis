@@ -1,10 +1,19 @@
+const checkboxCardChangeEvent = new Event('wOnChange');
+
+function emitCheckEvents(element){
+    element.inputElement.dispatchEvent(checkboxCardChangeEvent);
+    element.mainElement.dispatchEvent(checkboxCardChangeEvent);
+};
+
 function checkBoxCard(element) {
     element.inputElement.checked = true;
     element.mainElement.setAttribute("checked", true);
+    emitCheckEvents(element);
 };
 function uncheckBoxCard(element) {
     element.inputElement.checked = false;
     element.mainElement.setAttribute("checked", false);
+    emitCheckEvents(element);
 };
 
 function handleCheckCardState(element) {

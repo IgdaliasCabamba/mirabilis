@@ -20,6 +20,7 @@
         [MCheckableCard] {
             color: #54B435;
             border: 2px solid #6c63ff;
+            background-color: transparent;
         }
 
         [MCheckableCard][checked=true] {
@@ -69,6 +70,11 @@
     </cite>
 
     <script src="../dist/js/welwitschia.min.js"></script>
+    <script>
+        document.querySelector("#checkExample1").addEventListener("wOnChange", (event)=>{
+            console.log(event)
+        })
+    </script>
 </body>
 
 </html>

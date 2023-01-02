@@ -9,7 +9,6 @@
 [MCheckableCard] {
     -webkit-box-shadow: none;
     box-shadow: none;
-    background-color: transparent;
 }
 
 [MCheckableCard]:hover {

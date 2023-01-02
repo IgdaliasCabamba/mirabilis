@@ -1,10 +1,19 @@
+const radioCardChangeEvent = new Event('wOnChange');
+
+function emitRadioEvents(element){
+    element.mainElement.dispatchEvent(radioCardChangeEvent);
+    element.inputElement.dispatchEvent(radioCardChangeEvent);
+};
+
 function checkRadioCard(element) {
     element.inputElement.checked = true;
     element.mainElement.setAttribute("checked", true);
+    emitRadioEvents(element);
 };
 function uncheckRadioCard(element) {
     element.inputElement.checked = false;
     element.mainElement.setAttribute("checked", false);
+    emitRadioEvents(element);
 };
 
 function uncheckRadioGroup(element) {
